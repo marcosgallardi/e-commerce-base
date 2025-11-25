@@ -1,6 +1,6 @@
 const { orderItems } = require("../../DB_Connection");
 
-const createOrdItemCtrl = async () => {
+const createOrdItemCtrl = async ({ }) => {
     try {
         const data = await orderItems.create({});
         if (data) {

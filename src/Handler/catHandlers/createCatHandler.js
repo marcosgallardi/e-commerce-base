@@ -1,8 +1,10 @@
+const createCatCtrl = require("../../Controller/catCtrl/createCatCtrl");
+
 const createCatHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { name, description } = req.body;
 
     try {
-        const data = await createCatCtrl({ algo1, algo2 });
+        const data = await createCatCtrl({ name, description });
 
         if (data) {
             res.status(200).json(data);

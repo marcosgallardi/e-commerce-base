@@ -1,8 +1,8 @@
-const { categories } = require("../../DB_Connection");
+const { Categories } = require("../../DB_Connection");
 
-const createCatCtrl = async ({ }) => {
+const createCatCtrl = async ({ name, description }) => {
     try {
-        const data = await categories.create({});
+        const data = await Categories.create({ name, description });
         if (data) {
             return data;
         } else {

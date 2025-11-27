@@ -1,8 +1,8 @@
 const updateCatHandler = async (req, res) => {
-    const { } = req.body;
+    const { id } = req.body;
 
     try {
-        const data = await updateCatCtrl({});
+        const data = await updateCatCtrl({ id });
 
         if (data) {
             res.status(200).json(data);

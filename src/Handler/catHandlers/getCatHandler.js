@@ -1,8 +1,10 @@
+const getCatCtrl = require("../../Controller/catCtrl/getCatCtrl");
+
 const getCatHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+
 
     try {
-        const data = await getCatCtrl({ algo1, algo2 });
+        const data = await getCatCtrl();
 
         if (data) {
             res.status(200).json(data);

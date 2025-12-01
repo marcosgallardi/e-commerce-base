@@ -1,8 +1,10 @@
+const updateCatCtrl = require("../../Controller/catCtrl/updateCatCtrl");
+
 const updateCatHandler = async (req, res) => {
-    const { id } = req.body;
+    const { id, name, description } = req.body;
 
     try {
-        const data = await updateCatCtrl({ id });
+        const data = await updateCatCtrl({ id, name, description });
 
         if (data) {
             res.status(200).json(data);

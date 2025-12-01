@@ -27,7 +27,7 @@ const updateCatCtrl = async ({ id, name, description }) => {
             return false;
         }
     } catch (error) {
-        await t.rollback(); 
+        await t.rollback();
         throw error;
     }
 };

@@ -1,8 +1,8 @@
-const { categories } = require("../../DB_Connection");
+const { Categories } = require("../../DB_Connection");
 
 const getCatCtrl = async () => {
     try {
-        const data = await categories.find({});
+        const data = await Categories.findAll();
         if (data) {
             return data;
         } else {

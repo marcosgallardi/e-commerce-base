@@ -1,8 +1,10 @@
+const deleteCatCtrl = require("../../Controller/catCtrl/deleteCatCtrl");
+
 const deletCatHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { id } = req.body;
 
     try {
-        const data = await deletCatCtrl({ algo1, algo2 });
+        const data = await deleteCatCtrl({ id });
 
         if (data) {
             res.status(200).json(data);

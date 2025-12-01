@@ -1,8 +1,16 @@
-const { categories } = require("../../DB_Connection");
+const { Categories, sequelize } = require("../../DB_Connection");
 
-const deleteCatCtrl = async () => {
+const deleteCatCtrl = async ({ id }) => {
+    const t = await sequelize.transaction();
     try {
-        const data = await categories.deleteMany({});
+        if (!id) {
+            return false;
+        }
+        const data = await Categories.destroy({
+            where: { id }
+        },
+            { transaction: t }
+        );
         if (data) {
             return data;
         } else {

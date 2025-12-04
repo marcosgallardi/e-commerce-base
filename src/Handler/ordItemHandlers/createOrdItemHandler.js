@@ -1,8 +1,13 @@
+const createOrdItemCtrl = require("../../Controller/ordItemCtrl/createOrdItemCtrl");
+
 const createOrdItemHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { order_id, product_id, quantity, price } = req.body;
 
     try {
-        const data = await createOrdItemCtrl({ algo1, algo2 });
+        const data = await createOrdItemCtrl({
+            order_id,
+            product_id, quantity, price
+        });
 
         if (data) {
             res.status(200).json(data);

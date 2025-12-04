@@ -1,8 +1,13 @@
+const createUserCtrl = require("../../Controller/userCtrl/createUserCtrl");
+
 const createUserHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { name, email, password, role } = req.body;
 
     try {
-        const data = await createUserCtrl({ algo1, algo2 });
+        const data = await createUserCtrl({
+            name, email, password, role,
+
+        });
 
         if (data) {
             res.status(200).json(data);

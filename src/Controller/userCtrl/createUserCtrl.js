@@ -1,8 +1,8 @@
-const { user } = require("../../DB_Connection");
+const { User } = require("../../DB_Connection");
 
-const createUserCtrl = async () => {
+const createUserCtrl = async ({ name, email, password, role, }) => {
     try {
-        const data = await user.create();
+        const data = await User.create({ name, email, password, role, });
         if (data) {
             return data;
         } else {

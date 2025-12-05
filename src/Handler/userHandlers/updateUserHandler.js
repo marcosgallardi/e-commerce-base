@@ -1,8 +1,8 @@
 const updateUserHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { id, name, email, password, role } = req.body;
 
     try {
-        const data = await updateUserCtrl({ algo1, algo2 });
+        const data = await updateUserCtrl({ id, name, email, password, role });
 
         if (data) {
             res.status(200).json(data);

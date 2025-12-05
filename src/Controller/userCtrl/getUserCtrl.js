@@ -1,8 +1,8 @@
-const { user } = require("../../DB_Connection");
+const { User } = require("../../DB_Connection");
 
 const getUserCtrl = async () => {
     try {
-        const data = await user.getAll();
+        const data = await User.findAll();
         if (data) {
             return data;
         } else {

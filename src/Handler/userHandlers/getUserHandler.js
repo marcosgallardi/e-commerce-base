@@ -1,8 +1,10 @@
+const getUserCtrl = require("../../Controller/userCtrl/getUserCtrl");
+
 const getUserHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    // const { id } = req.body;
 
     try {
-        const data = await getUserCtrl({ algo1, algo2 });
+        const data = await getUserCtrl();
 
         if (data) {
             res.status(200).json(data);

@@ -1,3 +1,5 @@
+const updateUserCtrl = require("../../Controller/userCtrl/updateUserCtrl");
+
 const updateUserHandler = async (req, res) => {
     const { id, name, email, password, role } = req.body;
 

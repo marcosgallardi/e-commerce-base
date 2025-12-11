@@ -1,8 +1,10 @@
+const loginUserCtrl = require("../../Controller/userCtrl/loginUserCtrl");
+
 const loginUserHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { email, password } = req.body;
 
     try {
-        const data = await loginUserCtrl({ algo1, algo2 });
+        const data = await loginUserCtrl({ email, password });
 
         if (data) {
             res.status(200).json(data);

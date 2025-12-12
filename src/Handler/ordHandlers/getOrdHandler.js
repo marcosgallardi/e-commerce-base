@@ -1,8 +1,10 @@
+const getOrdCtrl = require("../../Controller/ordCtrl/getOrdCtrl");
+
 const getOrdHandler = async (req, res) => {
-    const { algo2, algo1 } = req.body;
+
 
     try {
-        const data = await getOrdCtrl({ algo2, algo1 });
+        const data = await getOrdCtrl();
 
         if (data) {
             res.status(200).json(data);

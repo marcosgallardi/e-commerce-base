@@ -1,10 +1,13 @@
-const { order } = require("../../DB_Connection");
+const { Orders } = require("../../DB_Connection");
 
-const updateOrdCtrl = async ({ }) => {
+const updateOrdCtrl = async ({ id, total, status }) => {
     try {
-        const data = await order.update({});
-        if (data) {
-            return data;
+        const order = await Orders.findByPk(id);
+        if (total) order.total = total;
+        if (status) order.status = status;
+        await order.save();
+        if (order) {
+            return order;
         } else {
             return false;
         }

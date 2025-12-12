@@ -1,8 +1,10 @@
+const createOrdCtrl = require("../../Controller/ordCtrl/createOrdCtrl");
+
 const createOrdHandler = async (req, res) => {
-    const { } = req.body;
+    const { user_id, total, status } = req.body;
 
     try {
-        const data = await createOrdCtrl({});
+        const data = await createOrdCtrl({ user_id, total, status });
 
         if (data) {
             res.status(200).json(data);

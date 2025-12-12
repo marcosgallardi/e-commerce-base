@@ -1,8 +1,8 @@
-const { orders } = require("../../DB_Connection");
+const { Orders } = require("../../DB_Connection");
 
-const createOrdCtrl = async ({ }) => {
+const createOrdCtrl = async ({ user_id, total, status }) => {
     try {
-        const data = await orders.create({});
+        const data = await Orders.create({ user_id, total, status });
         if (data) {
             return data;
         } else {

@@ -1,10 +1,12 @@
-const { orders } = require("../../DB_Connection");
+const { Orders } = require("../../DB_Connection");
 
-const deleteOrdCtrl = async () => {
+const deleteOrdCtrl = async (id) => {
     try {
-        const data = await orders.delete();
-        if (data) {
-            return data;
+        const order = await Orders.destroy({
+            where: { id: id },
+        });
+        if (order) {
+            return order;
         } else {
             return false;
         }

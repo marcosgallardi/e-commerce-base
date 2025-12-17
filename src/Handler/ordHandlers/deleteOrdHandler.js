@@ -1,3 +1,5 @@
+const deleteOrdCtrl = require("../../Controller/ordCtrl/deleteOrdCtrl");
+
 const deleteOrdHandler = async (req, res) => {
     const { id } = req.params;
 

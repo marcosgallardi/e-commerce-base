@@ -1,8 +1,8 @@
 const createProdHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { name, price, description, stock, category_id } = req.body;
 
     try {
-        const data = await createProdCtrl({ algo1, algo2 });
+        const data = await createProdCtrl({ name, price, description, stock, category_id });
 
         if (data) {
             res.status(200).json(data);

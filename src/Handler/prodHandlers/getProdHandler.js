@@ -1,8 +1,10 @@
-const getProdHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+const getProdCtrl = require("../../Controller/prodCtrl/getProdCtrl");
 
-    try {
-        const data = await getProdCtrl({ algo1, algo2 });
+const getProdHandler = async (req, res) => {
+    // const { algo1, algo2 } = req.body;
+
+    try { 
+        const data = await getProdCtrl();
 
         if (data) {
             res.status(200).json(data);

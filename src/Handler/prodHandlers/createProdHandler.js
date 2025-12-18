@@ -1,3 +1,5 @@
+const createProdCtrl = require("../../Controller/prodCtrl/createProdCtrl");
+
 const createProdHandler = async (req, res) => {
     const { name, price, description, stock, category_id } = req.body;
 

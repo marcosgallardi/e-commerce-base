@@ -1,8 +1,8 @@
-const { products } = require("../../DB_Connection");
+const { Products } = require("../../DB_Connection");
 
 const getProdCtrl = async () => {
     try {
-        const data = await products.getAll();
+        const data = await Products.findAll();
         if (data) {
             return data;
         } else {

@@ -1,8 +1,10 @@
+const updateProdCtrl = require("../../Controller/prodCtrl/updateProdCtrl");
+
 const updateProdHandler = async (req, res) => {
-    const { } = req.body;
+    const { id, name, price, description, stock, category_id } = req.body;
 
     try {
-        const data = await updateProdCtrl({});
+        const data = await updateProdCtrl({ id, name, price, description, stock, category_id });
 
         if (data) {
             res.status(200).json(data);

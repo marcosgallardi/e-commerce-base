@@ -1,4 +1,4 @@
-const { Products } = require("../../DB_Connection");
+const { Products, sequelize } = require("../../DB_Connection");
 
 const updateProdCtrl = async ({ id, name, price, description, stock, category_id }) => {
     const t = await sequelize.transaction();
@@ -11,7 +11,7 @@ const updateProdCtrl = async ({ id, name, price, description, stock, category_id
         if (stock) product.stock = stock;
         if (category_id) product.category_id = category_id;
 
-        await farmacia.save({ transaction: t });
+        await product.save({ transaction: t });
         await t.commit();
 
         if (product) {

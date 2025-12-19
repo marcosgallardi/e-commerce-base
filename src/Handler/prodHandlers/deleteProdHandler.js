@@ -1,8 +1,10 @@
+const deleteProdCtrl = require("../../Controller/prodCtrl/deleteProdCtrl");
+
 const deleteProdHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { id } = req.params;
 
     try {
-        const data = await deleteProdCtrl({ algo1, algo2 });
+        const data = await deleteProdCtrl(id);
 
         if (data) {
             res.status(200).json(data);

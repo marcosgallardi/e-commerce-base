@@ -8,7 +8,7 @@ const prodRouter = Router();
 
 prodRouter.post("/create", createProdHandler)
 prodRouter.put("/update", updateProdHandler)
-prodRouter.delete("/delete", deleteProdHandler)
+prodRouter.delete("/delete/:id", deleteProdHandler)
 prodRouter.get("/", getProdHandler)
 
 module.exports = prodRouter;

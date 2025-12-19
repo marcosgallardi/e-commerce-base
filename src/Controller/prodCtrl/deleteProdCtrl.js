@@ -1,8 +1,8 @@
-const { products } = require("../../DB_Connection");
+const { Products } = require("../../DB_Connection");
 
-const deleteProdCtrl = async () => {
+const deleteProdCtrl = async (id) => {
     try {
-        const data = await products.delete();
+        const data = await Products.destroy({ where: { id } });
         if (data) {
             return data;
         } else {

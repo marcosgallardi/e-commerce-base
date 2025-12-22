@@ -1,8 +1,10 @@
+const getOrderItemCtrl = require("../../Controller/ordItemCtrl/getOrdItemCtrl");
+
 const getOrdItemHandler = async (req, res) => {
-    const { } = req.body;
+    // const { } = req.body;
 
     try {
-        const data = await getOrdItemCtrl({});
+        const data = await getOrderItemCtrl();
 
         if (data) {
             res.status(200).json(data);

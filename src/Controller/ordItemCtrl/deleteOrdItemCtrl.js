@@ -1,8 +1,8 @@
-const { orderItems } = require("../../DB_Connection");
+const { OrderItems } = require("../../DB_Connection");
 
-const deleteOrdItemCtrl = async () => {
+const deleteOrdItemCtrl = async (id) => {
     try {
-        const data = await orderItems.delete();
+        const data = await OrderItems.destroy({ where: { id } });
         if (data) {
             return data;
         } else {

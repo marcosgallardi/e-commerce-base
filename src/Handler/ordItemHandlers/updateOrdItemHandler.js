@@ -1,8 +1,10 @@
+const updateOrdItemctrl = require("../../Controller/ordItemCtrl/updateOrdItemCtrl");
+
 const updateOrdItemHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { id, order_id, product_id, quantity, price } = req.body;
 
     try {
-        const data = await updateOrdItemCtrl({ algo1, algo2 });
+        const data = await updateOrdItemctrl({ id, order_id, product_id, quantity, price });
 
         if (data) {
             res.status(200).json(data);

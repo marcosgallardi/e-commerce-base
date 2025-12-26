@@ -9,6 +9,6 @@ const ordItemRouter = Router();
 ordItemRouter.post("/create", createOrdItemHandler);
 ordItemRouter.put("/update", updateOrdItemHandler);
 ordItemRouter.get("/", getOrdItemHandler);
-ordItemRouter.delete("/delete", deleteOrdItemHandler);
+ordItemRouter.delete("/delete/:id", deleteOrdItemHandler);
 
 module.exports = ordItemRouter;

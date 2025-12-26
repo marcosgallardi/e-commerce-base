@@ -1,11 +1,13 @@
+const createTicketCtrl = require("../../Controller/ticketCtrl/createTicketCtrl");
+
 const createTicketHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { orderId, fecha } = req.body;
 
     try {
-        const data = await createTicketCtrl({ algo1, algo2 });
+        const ticket = await createTicketCtrl({ orderId, fecha });
 
-        if (data) {
-            res.status(200).json(data);
+        if (ticket) {
+            res.status(200).json(ticket);
         } else {
             res.status(400).json(false);
         }

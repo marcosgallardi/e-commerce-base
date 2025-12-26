@@ -1,10 +1,10 @@
-const { tickets } = require("../../DB_Connection");
+const { Tickets } = require("../../DB_Connection");
 
-const createTicketCtrl = async () => {
+const createTicketCtrl = async ({ orderId, fecha }) => {
     try {
-        const data = await tickets.create();
-        if (data) {
-            return data;
+        const ticket = await Tickets.create({ orderId, fecha });
+        if (ticket) {
+            return ticket;
         } else {
             return false;
         }

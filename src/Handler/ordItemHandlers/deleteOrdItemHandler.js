@@ -1,8 +1,10 @@
+const deleteOrdItemCtrl = require("../../Controller/ordItemCtrl/deleteOrdItemCtrl");
+
 const deleteOrdItemHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { id } = req.params;
 
     try {
-        const data = await deleteOrdItemCtrl({ algo1, algo2 });
+        const data = await deleteOrdItemCtrl(id);
 
         if (data) {
             res.status(200).json(data);

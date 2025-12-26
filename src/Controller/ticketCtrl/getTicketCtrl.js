@@ -1,8 +1,8 @@
-const { tickets } = require("../../DB_Connection");
+const { Tickets } = require("../../DB_Connection");
 
 const getTicketCtrl = async () => {
     try {
-        const data = await tickets.getAll();
+        const data = await Tickets.findAll();
         if (data) {
             return data;
         } else {

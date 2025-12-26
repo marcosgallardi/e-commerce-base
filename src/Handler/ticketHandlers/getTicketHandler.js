@@ -1,11 +1,13 @@
+const getTicketCtrl = require("../../Controller/ticketCtrl/getTicketCtrl");
+
 const getTicketHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    // const { algo1, algo2 } = req.body;
 
     try {
-        const data = await getTicketCtrl({ algo1, algo2 });
+        const ticket = await getTicketCtrl();
 
-        if (data) {
-            res.status(200).json(data);
+        if (ticket) {
+            res.status(200).json(ticket);
         } else {
             res.status(400).json(false);
         }

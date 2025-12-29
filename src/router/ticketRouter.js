@@ -8,7 +8,7 @@ const ticketRouter = Router();
 
 ticketRouter.post("/create", createTicketHandler)
 ticketRouter.put("/update", updateTicketHandler)
-ticketRouter.delete("/delete", deleteTicketHandler)
+ticketRouter.delete("/delete/:id", deleteTicketHandler)
 ticketRouter.get("/", getTicketHandler)
 
 

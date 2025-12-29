@@ -1,8 +1,8 @@
-const { tickets } = require("../../DB_Connection");
+const { Tickets } = require("../../DB_Connection");
 
-const deleteTicketCtrl = async () => {
+const deleteTicketCtrl = async ( id) => {
     try {
-        const data = await tickets.delete();
+        const data = await Tickets.destroy({ where: { id } });
         if (data) {
             return data;
         } else {

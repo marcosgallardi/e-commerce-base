@@ -1,8 +1,10 @@
+const deleteTicketCtrl = require("../../Controller/ticketCtrl/deleteTicketCtrl");
+
 const deleteTicketHandler = async (req, res) => {
-    const { algo1, algo2 } = req.body;
+    const { id } = req.params;
 
     try {
-        const data = await deleteTicketCtrl({ algo1, algo2 });
+        const data = await deleteTicketCtrl(id);
 
         if (data) {
             res.status(200).json(data);

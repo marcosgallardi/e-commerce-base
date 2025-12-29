@@ -1,10 +1,15 @@
-const { tickets } = require("../../DB_Connection");
+const { Tickets } = require("../../DB_Connection");
 
-const updateTicketCtrl = async () => {
+const updateTicketCtrl = async ({ id, orderId, fecha }) => {
     try {
-        const data = await tickets.update();
-        if (data) {
-            return data;
+
+        const ticket = await Tickets.findByPk(id);
+        if (orderId) ticket.orderId = orderId;
+        if (fecha) ticket.fecha = fecha;
+        await ticket.save();
+
+        if (ticket) {
+            return ticket;
         } else {
             return false;
         }
